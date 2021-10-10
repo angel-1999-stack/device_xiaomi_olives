@@ -49,6 +49,10 @@ qcom.bluetooth.soc=smd
 ro.bluetooth.hfp.ver=1.7
 ro.qualcomm.bt.hci_transport=smd
 
+# Blur
+ro.sf.blurs_are_expensive=1
+ro.surface_flinger.supports_background_blur=1
+
 # Bpf
 ro.kernel.ebpf.supported=1
 
@@ -77,10 +81,11 @@ persist.vendor.dpm.loglevel=0
 # Display
 debug.cpurend.vsync=false
 debug.egl.hw=0
+debug.hwui.renderer=skiagl
 debug.enable.sglscale=1
 debug.gralloc.enable_fb_ubwc=1
 debug.mdpcomp.logs=0
-debug.sf.enable_hwc_vds=1
+debug.sf.enable_hwc_vds=0
 debug.sf.hw=0
 debug.sf.latch_unsignaled=1
 debug.sf.recomputecrop=0
@@ -143,6 +148,24 @@ ro.vendor.qti.sys.fw.bservice_enable=true
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
+# Power saving
+power.saving.mode=1
+pm.sleep_mode=1
+ro.vendor.use_data_netmgrd=true
+ro.vold.umsdirtyratio=20
+ro.ril.disable.power.collapse=0
+
+# RAM Tweaks
+ro.config.fha_enable=true
+ro.sys.fw.bg_apps_limit=32
+ro.config.dha_cached_max=16
+ro.config.dha_empty_max=42
+ro.config.dha_empty_init=32
+ro.config.dha_lmk_scale=0.545
+ro.config.dha_th_rate=2.3
+ro.config.sdha_apps_bg_max=64
+ro.config.sdha_apps_bg_min=8
+
 # Netflix
 ro.netflix.bsp_rev=Q660-13149-1
 
@@ -199,3 +222,8 @@ ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 
 # Time Services
 persist.timed.enable=true
+
+# ZRAM
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
