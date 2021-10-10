@@ -192,6 +192,10 @@ void load_mods()
     property_override("ro.bootimage.build.fingerprint", "google/redfin/redfin:11/RQ3A.211001.001/7641976:user/release-keys");
     // property_override("ro.build.description", "redfin-user 11 RQ3A.211001.001 7641976 release-keys");
 
+    /* Override security patches */
+    // property_override("ro.build.version.security_patch", "2021-10-01");
+    property_override("ro.vendor.build.security_patch", "2021-10-01");
+
     /* Spoof Build keys */
 	for (int i = 0; build_keys_props[i]; ++i) {
 		property_override(build_keys_props[i], "release-keys");
